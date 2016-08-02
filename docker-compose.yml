@@ -1,0 +1,17 @@
+backend:
+  build: backend
+  links:
+    - db
+
+frontend:
+  build: frontend
+  links:
+    - db
+
+db:
+  image: mariadb:10.1
+  environment:
+    - MYSQL_ROOT_PASSWORD=solmuapp
+    - MYSQL_USER=solmuapp
+    - MYSQL_PASSWORD=solmuapp
+    - MYSQL_DATABASE=solmuapp
